@@ -23,32 +23,29 @@ function fetchData() {
 
 // process request data
 function processData() {
-    // remove most of the page's top margin
     document.getElementById('top').className = 'center marginTopTwo';
-    titleDiv = document.getElementById('bookTitle');
-    // show title div
-    document.getElementById('bookTitleText').className = 'showText';
-    // loop through response array of objects
+    titleDiv = document.getElementById('tvshow');
+    document.getElementById('tvshowtext').className = 'showText';
+    // loop through the array
     for (var i = 0; i < responseData.length; i++) {
-        // reference to current array's object
         var item = responseData[i];
-        // Show Name
         titleDiv.innerHTML += 'Name: ' + item.show.name + '<br>';
-        if (item.show.permiered != null) {
+        // show if not null
+        if (item.show.permiered !== null) {
+                                                  // display the year by slicing the string
             titleDiv.innerHTML += 'Premiered: ' + item.show.premiered.slice(0, 4) +'<br>';
         } else {
             titleDiv.innerHTML += 'Rating: Sorry, date not available.<br>';           
         }
-        if (item.show.rating.average != null) {
+        // show if not null 
+        if (item.show.rating.average !== null) {
             titleDiv.innerHTML += 'Rating: ' + item.show.rating.average +'<br>';
         } else {
             titleDiv.innerHTML += 'Rating: Sorry, not rated.<br>';           
         }
         titleDiv.innerHTML += 'Status: ' + item.show.status +'<br>';
         titleDiv.innerHTML += '<br>';
-
     }
-
 }
 
 // eventlisteners 
