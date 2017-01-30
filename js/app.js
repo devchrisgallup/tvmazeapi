@@ -34,8 +34,12 @@ function processData() {
         var item = responseData[i];
         // Show Name
         titleDiv.innerHTML += 'Name: ' + item.show.name + '<br>';
-        titleDiv.innerHTML += 'Premiered: ' + item.show.premiered.slice(0, 4) +'<br>';
-        if (item.show.rating.average !== null) {
+        if (item.show.permiered != null) {
+            titleDiv.innerHTML += 'Premiered: ' + item.show.premiered.slice(0, 4) +'<br>';
+        } else {
+            titleDiv.innerHTML += 'Rating: Sorry, date not available.<br>';           
+        }
+        if (item.show.rating.average != null) {
             titleDiv.innerHTML += 'Rating: ' + item.show.rating.average +'<br>';
         } else {
             titleDiv.innerHTML += 'Rating: Sorry, not rated.<br>';           
@@ -44,8 +48,7 @@ function processData() {
         titleDiv.innerHTML += '<br>';
 
     }
-    var names = responseData; 
-    console.log(names[0].show.premiered.slice(0, 4));
+
 }
 
 // eventlisteners 
