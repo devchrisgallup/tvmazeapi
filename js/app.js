@@ -50,3 +50,10 @@ function processData() {
 
 // eventlisteners 
 document.getElementById('processData').addEventListener('click', fetchData, false);
+document.getElementById("getItem").addEventListener('keyup', function(event) {
+    event.preventDefault();
+    // enter key pressed
+    if (event.keyCode == 13) {
+        fetchData(); 
+    }
+});
