@@ -26,6 +26,7 @@ function processData() {
     document.getElementById('top').className = 'center marginTopTwo';
     titleDiv = document.getElementById('tvshow');
     document.getElementById('tvshowtext').className = 'showText';
+    console.log(responseData); 
     // loop through the array
     for (var i = 0; i < responseData.length; i++) {
         var item = responseData[i];
