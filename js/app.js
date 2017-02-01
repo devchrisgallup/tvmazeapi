@@ -31,8 +31,7 @@ function processData() {
         var item = responseData[i];
         titleDiv.innerHTML += 'Name: ' + item.show.name + '<br>';
         // show if not null
-        if (item.show.permiered !== null) {
-                                                  // display the year by slicing the string
+        if (item.show.premiered !== null) {
             titleDiv.innerHTML += 'Premiered: ' + item.show.premiered.slice(0, 4) +'<br>';
         } else {
             titleDiv.innerHTML += 'Rating: Sorry, date not available.<br>';           
