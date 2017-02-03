@@ -10,6 +10,10 @@ button {
     color: #0000FF;
 }
 
+#tvshow {
+    padding: 1%; 
+}
+
 .strong {
     font-weight: bolder; 
     font-size: 1.5rem; 
@@ -49,4 +53,8 @@ button {
     background-color: #FFF;
     color: #1a1a1a;
     border-radius: 25px; 
+}
+
+.whiteText {
+    color: #0000FF; 
 }

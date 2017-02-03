@@ -21,16 +21,17 @@ function fetchData() {
     document.getElementById('getItem').value = '';
 }
 
+
 // process request data
 function processData() {
     document.getElementById('top').className = 'center marginTopTwo';
     titleDiv = document.getElementById('tvshow');
+    titleDiv.innerHTML = ''; 
     document.getElementById('tvshowtext').className = 'showText';
     console.log(responseData); 
-    // loop through the array
+    // loop through the object of objects
     for (var i = 0; i < responseData.length; i++) {
         var item = responseData[i];
-        titleDiv.innerHTML += 'Name: ' + item.show.name + '<br>';
         // show if not null
         if (item.show.premiered !== null) {
             titleDiv.innerHTML += 'Premiered: ' + item.show.premiered.slice(0, 4) +'<br>';
@@ -43,6 +44,7 @@ function processData() {
         } else {
             titleDiv.innerHTML += 'Rating: Sorry, not rated.<br>';           
         }
+        titleDiv.innerHTML += 'Name: ' + item.show.name + '<br>';
         titleDiv.innerHTML += 'Status: ' + item.show.status +'<br>';
         titleDiv.innerHTML += '<br>';
     }
